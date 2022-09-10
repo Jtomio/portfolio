@@ -149,7 +149,7 @@ html, body {
 }
 .webview .-skills .list-skills li .card-skill .box span {
   font-weight: 800;
-  font-size: small;
+  font-size: 1.2rem;
   line-height: 100%;
   text-transform: uppercase;
   color: #232323;
@@ -355,58 +355,63 @@ html, body {
 }
 
 @media screen and (min-width: 425px) {
-  .webview .intro .container h2 {
-    font-family: "Ruda", sans-serif;
-    font-weight: 500;
-    font-size: 1.6rem;
+  .webview .intro .container h1 {
+    font-size: 3rem;
     font-weight: bold;
-    color: #00082f;
   }
   .webview .intro .container p {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
-  .about .container h2 {
-    font-size: 2.4rem;
-  }
-  .about .container p {
-    font-size: 1.4rem;
-  }
-  .about .webview .container .row {
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-  }
-  .about .webview .container .row .c-photo {
+  .webview .intro .container .m-auto-btn {
     padding: 10px;
   }
-  .about .webview .container .p-title {
+  .webview .intro .container .m-auto-btn .btn-portfolio {
+    font-size: 1.3rem;
+  }
+  .webview .about {
+    width: 100%;
+    height: 100%;
+  }
+  .webview .about .container .title h2 {
+    font-size: 2.4rem;
+  }
+  .webview .about .container .c-description {
+    font-size: 1.8rem;
+  }
+  .webview .-skills .container h2 {
+    font-size: 2.4rem;
+  }
+  .webview .-skills .container .row li .card-skill span {
+    font-size: 1.6rem;
+  }
+  .webview .portfolio .container .p-title {
     margin-top: 30px;
     margin-bottom: 30px;
   }
-  .about .webview .container .webview .p-projects .project {
-    grid-template-columns: repeat(2, 1fr);
+  .webview .portfolio .container .p-title h2 {
+    font-size: 3rem;
+  }
+  .webview .portfolio .container .p-projects .project {
+    grid-template-columns: repeat(2, 15fr);
     grid-template-rows: repeat(2, 1fr);
     row-gap: 10px;
     column-gap: 10px;
   }
-  .about .webview .container .webview .p-projects .project .photos {
+  .webview .portfolio .container .p-projects .project .photos {
     height: 100%;
   }
-  .about .webview .container .webview .p-projects .project .photos img {
+  .webview .portfolio .container .p-projects .project .photos img {
     position: relative;
   }
-  .about .webview .container .webview .p-projects .project .photos img:hover .description {
+  .webview .portfolio .container .p-projects .project .photos img:hover .description {
     position: absolute;
     display: flex;
     width: 100%;
     height: 50px;
-    background-color: #00082f;
+    background-color: #4263eb;
     bottom: 0;
     left: 0;
     z-index: 9999;
-  }
-  .about .webview .container .webview .p-projects .project .photos img:hover .description p {
-    display: block;
-    color: #fff;
   }
 }
 
