@@ -1,3 +1,5 @@
+// Import config
+
 @use './assets/sass/config';
 
 // reset config
@@ -14,4 +16,515 @@ html, body {
     width: 100vw;
     height: 100vh;
     font-size: 18px;
+}
+
+// config do body project
+.webview {
+    width: 100%;
+    margin: auto;
+
+    // config section intro
+    .intro {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        background-color: config.$color-bg;
+        color: config.$color-white;
+
+        .container {
+            h1 {
+                font-size: 2rem;
+                text-align: center;
+            }
+            p{
+                font-size: 1rem;
+                text-align: center;
+            }
+            .m-auto-btn {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                margin-top: 8px;
+
+                .btn-portfolio {
+                    @include config.font-paragraf;
+                    width: 160px;
+                    height: 35px;
+                    border-radius: 6px;
+                    border: 1px solid config.$color-white;
+                    background-color: transparent;
+                    color: config.$color-white;
+                }
+            }
+        
+        }
+    }
+
+    // config section about me
+    .about {
+       width: 100%;
+        
+        .container {
+            padding: 10px;
+
+            .title {
+                width: 100%;
+                text-align: center;
+                margin-top: 20px;
+
+                h2 {
+                    @include config.font-subtitle;
+                    font-size: 1.6rem;
+                    font-weight: bold;
+                    color: config.$color-bg;
+                }
+            }
+
+            .row {
+                width: 100%;
+                margin-top: 30px;
+                margin-bottom: 30px;
+
+                .c-photo {
+                    width: 70%;
+                    margin: auto;
+                    margin-bottom: 30px;
+
+                    img {
+                    width: 100%;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: top;  
+                    border-radius: 50%; 
+                    }
+                }
+
+                .c-description {
+                    width: 100%;
+                    
+                    p {
+                    @include config.font-paragraf;
+                    text-align: justify;
+                    margin-bottom: 20px;
+                    }    
+
+                    
+                }
+            }
+        }
+    
+    }  
+    
+    // Hard Skills
+
+    .-skills {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .title {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+
+            h2 {
+                @include config.font-subtitle;
+                font-size: 1.6rem;
+                font-weight: bold;
+                color: config.$color-bg;
+            }
+        }
+
+        .list-skills {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: block;
+
+            li {
+                display: block;
+                width: 100%;
+                margin-bottom: 15px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                .card-skill {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    background-color: config.$color-white;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    padding: 15px;
+                    
+                    .percentage {
+                        position: absolute;
+                        height: 5px;
+                        background-color: config.$color-bg;
+                        left: 0;
+                        bottom: 0;
+                    }
+
+                    .box {
+                        display: flex;
+                        align-items: center;
+                        
+                        span {
+                            font-weight: 800;
+                            font-size: small;
+                            line-height: 100%;
+                            text-transform: uppercase;
+                            color: config.$color-text;
+                        }
+
+                        img {
+                            margin-right: 10px;
+                        }
+                    }
+                
+                }
+            }
+        }
+        .img {
+            box-shadow: config.$color-shadow;
+        }
+
+
+
+    }
+
+
+    // config section portfólio
+    .portfolio {
+        width: 100%;
+        min-height: 100vh;
+
+        .container {
+            padding: 10px;
+
+            .p-title {
+                width: 100%;
+                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 30px;
+
+                h2 {
+                    @include config.font-subtitle;
+                    font-size: 1.6rem;
+                    font-weight: bold;
+                    color: config.$color-bg;
+                }
+            }
+
+            .p-projects {
+                width: 100%;
+
+                .project {
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: 100%;
+                    grid-template-rows: repeat(3, auto);
+                    row-gap: 10px;
+
+                    .photos {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 4px;
+
+                        .img {
+                            // width: 50%;
+                            // height: 50%;
+                            position: relative;
+
+                            &:hover {
+
+                                .description {
+                                    position: absolute;
+                                    display: flex;
+                                    width: 100%;
+                                    height: 50px;
+                                    background-color: config.$color-primary;
+                                    bottom: 0;
+                                    left: 0;
+                                    z-index: 9999;
+
+                                    p {
+                                        display: block;
+                                        color: config.$color-white;
+                                    }
+                                }
+                            }
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                background-size: cover;
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+                        }
+
+                        .description {
+                            display: none;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            justify-content: center;
+                            align-items: center;
+                            width: 100%;
+                            min-height: 50px;
+
+                            p {
+                                display: none;
+                                @include config.font-paragraf;
+                                color: config.$color-white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }    
+
+    // config section contact
+    .contact {
+        width: 100%;
+        margin-bottom: 30px;
+
+        .container {
+            padding: 10px;
+
+            .title {
+                width: 100%;
+                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 30px;
+
+                h2 {
+                    @include config.font-subtitle;
+                    font-size: 1.6rem;
+                    font-weight: bold;
+                    color: config.$color-bg;
+                }
+            }
+
+            .form {  //class do formulário
+                width: 100%;
+
+                form {  // formulário
+                    width: 100%;
+
+                    .form-group {
+                        width: 100%;
+
+                        .controls {
+                            width: 100%;
+                            min-height: 70px;
+
+                            label {
+                                @include config.font-paragraf;
+                                font-weight: bold;
+                                color: config.$color-bg;
+                            }
+
+                            input {
+                                @include config.font-paragraf;
+                                width: 100%;
+                                height: 30px;
+                                padding: 10px;
+                                border: 1px solid config.$color-bg;
+                                outline: none;
+
+                                &:active,
+                                &:focus {
+                                    border: 1px solid config.$color-text;
+                                    border-radius: 2px;
+                                    outline: none;
+                                }
+                            }
+
+                            textarea {
+                                @include config.font-paragraf;
+                                width: 100%;
+                                height: 180px;
+                                padding: 10px;
+                                border: 1px solid config.$color-bg;
+                                outline: none;
+
+                                &:active,
+                                &:focus {
+                                    border: 1px solid config.$color-bg;
+                                    border-radius: 2px;
+                                    outline: none;
+                                }
+                            }
+                        }
+
+                        .btn-form-send {
+                            @include config.font-paragraf;
+                            margin-top: 20px;
+                            width: 140px;
+                            height: 40px;
+                            border: none;
+                            background-color: config.$color-bg;
+                            color: config.$color-white;
+                            border-radius: 5px;
+
+                            &:active,
+                            &:focus {
+                                border: 1px solid config.$color-bg;
+                                border-radius: 2px;
+                                outline: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // config footer
+    footer {
+        position: relative;
+        width: 100%;
+        min-height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-top: 2px solid config.$color-bg;
+        bottom: 0;
+
+        .footerParagraph {
+            text-align: center;
+            margin-top: 10px;
+            color: config.$color-text;
+        }
+
+        .footerSocial {
+            color: config.$color-text;
+            position: relative;
+            display: flex;
+            
+            li {
+                list-style: none;
+
+                a {
+                    font-size: 1.5rem;
+                    color: config.$color-text;
+                    display: inline-block;
+                    transition: .5s;
+                    margin: 0px 10px;
+
+                    &:hover {
+                        opacity: 0.75;
+                        transform: translateY(-10px);
+                        color: config.$color-primary;
+                    }
+                }
+            }
+        }
+
+    }
+
+}
+
+// Breakpoints screen
+
+@media screen and (min-width: config.$media-mobile-l) {
+   
+    
+
+        .webview .intro {
+        
+            .container {
+
+                h2 {
+                    @include config.font-subtitle;
+                    font-size: 1.6rem;
+                    font-weight: bold;
+                    color: config.$color-bg;
+                }
+
+                p {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+
+        .about {
+            .container {
+                
+                h2 {
+                    font-size: 2.4rem;
+                }
+
+                p {
+                    font-size: 1.4rem;
+                }
+            }
+
+            .webview .container {
+
+                .row {
+                    display: grid;
+                    grid-template-columns: repeat(2, 50%);
+
+                    .c-photo {
+                        padding: 10px;
+                    }
+                }
+
+                .p-title {
+                    margin-top: 30px;
+                    margin-bottom: 30px;
+                }
+
+                
+                .webview .p-projects {
+                    .project {
+                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-rows: repeat(2, 1fr);
+                        row-gap: 10px;
+                        column-gap: 10px;
+
+                        .photos {
+                            height: 100%;
+
+                            img {
+                                position: relative;
+
+                                &:hover {
+                                        
+                                    .description {
+                                        position: absolute;
+                                        display: flex;
+                                        width: 100%;
+                                        height: 50px;
+                                        background-color: config.$color-bg;
+                                        bottom: 0;
+                                        left: 0;
+                                        z-index: 9999;
+
+                                        p {
+                                          display: block;
+                                          color: config.$color-white;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+            
+        }
+      
 }
